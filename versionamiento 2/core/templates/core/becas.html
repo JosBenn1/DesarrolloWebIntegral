@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Solicitar Beca{% endblock %}
+
+{% block content %}
+ 
+<div>
+    <form >
+      <label for="matricula">Matricula</label>
+      <input type="text" id="matricula" name="Matricula" placeholder="Matricula">
+      
+      <label for="nombre">Nombre(s)</label>
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombre(s)">
+      
+      <label for="apellidos">Apellidos</label>
+      <input type="text" id="apellidos" name="Apellidos" placeholder="Apellidos">
+ 
+      <label for="carrera">Carrera</label>
+      <input type="text" id="carrera" name="Carrera" placeholder="Carrera">
+ 
+       <label for="grado">Grado que estas cursando </label>
+      <select id="grado" name="grado">
+        <option value="">1</option>
+        <option value="">3</option>
+      </select>
+
+      <label for="country">Tipo de escolaridad</label>
+      <select id="escolaridad" name="escolaridad">
+        <option value="">Cuatrimestre</option>
+        <option value="">Semestre</option>
+      </select>
+
+      <label for="beca">Tipo de Beca</label>
+      <select id="beca" name="beca">
+        <option value="">Promedio</option>
+        <option value="">otra</option>
+      </select>
+  
+      <label for="porcentaje">Por centaje</label>
+      <input type="number" id="porcentaje" name="porcentaje" placeholder="Por centaje">
+  
+    
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{% block title %}Universidad Imaginaria{% endblock %}</title>
+
+        {% load static %} 
+
+        <!-- Fuentes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2? family=Open+Sans:wght@600&display=swap" rel="hoja de estilo">
+        <!-- Estilos -->
+        <link rel="stylesheet" href="{% static '/core/css/stylelogin.css' %}">
+
+    </head>
+    {% block content %}{% endblock %}
+    <body>
+        <img  class="wave" src="{% load static %}{% static 'core/assets/img/wave.png '%} " >
+       <div class="container">
+           <div class="img">
+            <img src="{% load static %}{% static 'core/assets/img/img.svg'%}" >
+           </div>
+           <div class="login-container">
+               <form action="index.html">
+                   <img class="avatar" src="{% load static %}{% static 'core/assets/img/avatar.svg'%}" >
+                   <h2>Bienvenidos</h2>
+                   <div class="input-div uno">
+                       <div class="i">
+                           <i class="fas fa-user"> </i>
+                        </div>
+                        <div>
+                            <h5>Matricula</h5>
+                            <input class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="input-div dos">
+                        <div class="i">
+                            <i class="fas fa-lock"> </i>
+                         </div>
+                         <div>
+                             <h5>Contraseña</h5>
+                             <input class="input" type="password">
+                         </div>
+                    </div>
+                    <a href="{% url 'home' %}">Recuperar Contraseña</a>
+                    <input class="btn" type="submit" value="Iniciar Sesión">
+               </form>
+           </div>
+       </div>
+
+       <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+       <script type="text/javascript" src="{% static 'core/js/main.js' %}"></script>
+    </body>
+
+</html>

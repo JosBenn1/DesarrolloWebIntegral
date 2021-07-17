@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>{% block title %}Home{% endblock %}</title>
+
+      {% load static %} 
+    <!-- Fuentes -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Estilos -->
+      <link rel="stylesheet" href="{% static '/core/css/styleNvar.css' %}">
+      <link rel="stylesheet" href="{% static '/core/css/home.css' %}">
+      <link rel="stylesheet" href="{% static '/core/css/pagos.css' %}">
+      
+      
+  </head>
+
+
+  <body>
+      <header>
+          <div class="inner-width">
+            <a href="{% url 'home' %}" class="logo"><img src="{% load static %}{% static 'core/assets/img/logo.svg '%} " alt=""></a>
+            <i class="menu-toggle-btn fas fa-bars"></i>
+            <!-- Navegación -->
+            <nav class="navigation-menu">
+              <a href="{% url 'home' %}"><i class="fas fa-home home"></i> Perfil </a>
+              <a href="{% url 'pagos' %}"><i class="fas fa-headset fa-money-bill-wave"></i> Orden de Pago</a>
+              <a href="{% url 'becas' %}"><i class="fab fa-buffer works"></i> Becas</a>
+              <a href="{% url 'profesores' %}"><i class="fas fa-users team"></i> Profesores</a>
+              <a href="{% url 'index' %}"><i class="fas fa-user-lock "></i> Cerrar Sesión</a> 
+            </nav>
+          </div>
+      </header>
+      
+        {% block content %} {% endblock %}
+
+      <!-- Pié de página -->
+        <footer>
+          <div class="footer-conten"></div>
+              copyright &copy;2021 Universidad. Tecamachalco 
+              <div class="footer-conten"></div>
+      </footer>
+      <!--  -->
+      <script type="text/javascript">
+        $(".menu-toggle-btn").click(function(){
+          $(this).toggleClass("fa-times");
+          $(".navigation-menu").toggleClass("active");
+        });
+      </script>
+  </body>
+
+  
+</html>
+  
