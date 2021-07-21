@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Becas{% endblock %}
+
+{% block content %}
+<section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="block-heading">
+            <h2 class="text-start text-dark">Beca</h2>
+            <p>Para solicitar una beca favor de rellenar el siguiente formulario</p>
+        </div>
+        <form>
+            <div class="mb-3"><label class="form-label" for="name">Nombre</label><input class="form-control" type="text" id="name" name="name"></div>
+            <div class="mb-3"><label class="form-label" for="lastmane">Apellidos</label><input class="form-control" type="text" id="lastname" name="lastname"></div>
+            <div class="mb-3"><label class="form-label" for="matricula">Matricula</label><input class="form-control" type="int" id="matricula" name="matricula"></div>
+            <div class="mb-3"><label class="form-label" for="carrera">Carrera</label><input class="form-control" type="text" id="carrera" name="carrera"></div>
+            <div class="mb-3">
+                <label class="form-label" for="subject">Tipo de Periodo</label>
+                <select class="form-select" id="subject">
+                    <optgroup label="Periodos">
+                        <option value="13">Cuatrimestre</option>
+                        <option value="14">Semestre</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="mb-3"><label class="form-label" for="periodo">Periodo</label><input class="form-control" type="int" id="periodo" name="periodo"></div>
+            <div class="mb-3"><label class="form-label" for="porcentaje">Porcentaje</label><input class="form-control" type="text" id="procentaje" name="porcentaje"></div>
+            <div class="mb-3"></div>
+            <div class="mb-3"><button class="btn btn-primary" type="submit">Enviar</button></div>
+        </form>
+    </div>
+</section>
+{% endblock %}

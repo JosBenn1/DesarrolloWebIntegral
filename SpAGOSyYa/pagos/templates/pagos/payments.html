@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Solicitar Orden{% endblock %}
+
+{% block content %}
+	<!-- Content page -->
+	<div class="container-fluid">
+		<div class="page-header">
+		  <h1 class="text-titles"><i class="zmdi zmdi-money zmdi-hc-fw"></i> Pagos <small>Solicitud de pagos</small></h1>
+		</div>
+		<p class="lead">En este apartado deberas seleccionar el tipo de pago que desas realizar, es su responsabilidad definir la cantidad a pagar, ya que este apartado es unicamente para generar la oden de pago !</p>
+				
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+					  <li class="active"><a href="#new" data-toggle="tab">Datos</a></li>
+					  <!--<li><a href="#list" data-toggle="tab">List</a></li>-->
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div class="tab-pane fade active in" id="new">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-12 col-md-10 col-md-offset-1">
+									<form action="" method="POST">{% csrf_token %}
+										<div class="form-group label-floating">
+										  <label class="control-label">{{la_form.cuatrimestre.label_tag }}</label><br/>
+										  {{la_form.cuatrimestre }}
+										  
+										</div>
+										<div class="form-group">
+											<label class="control-label">{{la_form.motivo.label_tag }}</label><br/>
+											<!--<select class="form-control">
+												<option>Orden de Pago</option>
+												<option>Transferencia electronica</option>
+												<option>PayPal</option>
+											  </select>-->
+											{{la_form.motivo }}
+										</div>
+									
+										<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+										<div class="form-group label-floating">
+											<label class="control-label">{{la_form.descripcion.label_tag }}</label><br/>
+											{{la_form.descripcion }}
+										  </div>
+										  <div class="form-group label-floating">
+											<label class="control-label">{{la_form.cantidad.label_tag }}</label><br/>
+											{{la_form.cantidad }}
+										  </div>
+										<div class="form-group label-floating">
+											<label class="control-label">{{la_form.beca.label_tag }}</label><br/>
+											{{la_form.beca }}
+										  </div>							
+										  
+										  <div class="form-group text-center">
+											
+												 <button type="button" onclick="myFunction()"><input type="submit" value="Obtener Orden" class="btn btn-raised btn-danger"></button>
+												 <script>
+													function myFunction() {
+													  window.open("{% url 'report' %}");
+													}
+												</script>
+												 
+										</div>
+										
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

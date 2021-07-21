@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}  </title>
+
+    {% load static %}
+    
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link href="{% static 'core/css/Navigation-with-Button.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'core/img/school.png' %}" rel="icon">
+    {% block head-extra %}
+    <!--Nuevo tag block para agregar mas css-->
+    {% endblock %}
+
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md">
+            <div class="container-fluid"><a class="navbar-brand" href="/perfil/"><span>Universidad</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="{% url 'profile' %}"><span>Perfil</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pago' %}"><span>Pagos</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'becas' %}"><span>Becas</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'regpagos' %}"><span>Registrar Pagos</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% block content %}{% endblock %}
+
+    <footer class="bg-white sticky-footer">
+        <div class="container my-auto">
+            <div class="text-center my-auto copryghgt">
+                <span>Universidad</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

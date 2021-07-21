@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Iniciar sesion</title>
+    {% load static %}
+    
+    <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" >
+    <link href="{% static 'core/vendor/fonts/fontawesome-all.min.css' %}" rel="stylesheet" >
+    <link href="{% static 'core/vendor/fonts/ionicons.min.css' %}" rel="stylesheet" >
+    
+    <link href="{% static 'core/css/Login-Form-Clean.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <section class="login-clean">
+        <header></header>
+        <form method="post">
+            <h2 class="visually-hidden">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+            <div class="mb-3"><input class="form-control" type="int" name="Matricula" placeholder="Matricula"></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Iniciar sesion</button></div><a class="forgot" href="/perfil/">Olvido la contrasena?</a>
+        </form>
+    </section>
+
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+
+</html>
